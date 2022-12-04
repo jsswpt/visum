@@ -1,0 +1,7 @@
+@use "../../modules/units.module";
+
+.header {
+  display: flex;
+  align-items: center;
+  height: units.$header-height;
+}

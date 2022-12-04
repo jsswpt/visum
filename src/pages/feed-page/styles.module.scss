@@ -1,0 +1,15 @@
+@use "../../shared/modules/units.module";
+@use "../../shared/modules/breakpoints.module";
+
+.main {
+  padding: units.$padding-y 0;
+}
+
+.page {
+  @include breakpoints.screen-xs {
+    padding-bottom: 100px;
+  }
+  @include breakpoints.screen-sm {
+    padding-bottom: 0;
+  }
+}

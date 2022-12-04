@@ -1,0 +1,6 @@
+@use "../../modules/units.module";
+
+.container {
+  width: 100%;
+  padding: 0 units.$padding-x;
+}
