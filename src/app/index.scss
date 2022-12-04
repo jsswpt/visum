@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+:root {
+  --primary: #ce50ff;
+  --error: #ef0404;
+  --success: #9de637;
+  --warning: #d77229;
+}
+
+body {
+  background: var(--background);
+}
+
+.dark {
+  --background: #201d1d;
+  --surface: #2c2b2b;
+  --text-primary: #f1e6e6;
+  --text-secondary: #7b6e6e;
+  --stroke: rgba(255, 255, 255, 0.04);
+}
