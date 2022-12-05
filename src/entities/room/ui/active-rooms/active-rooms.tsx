@@ -1,30 +1,21 @@
-import { useList, useStore } from "effector-react";
-import {
-  $activeRooms,
-  $isActiveRoomsLoading,
-  $activeRoomsError,
-  onActiveRoomsElementOpened,
-} from "entities/room";
-import { useEffect } from "react";
+import { useList } from "effector-react";
+import { $activeRooms } from "entities/room";
+import RoomCard from "shared/ui/room-card/room-card";
 
 import st from "./styles.module.scss";
 
 export default function ActiveRoomsChunk() {
-  const activeRooms = useList($activeRooms, (room) => <div>{room.name}</div>);
+  const activeRooms = useList($activeRooms, (room) => (
+    <li className={st.item} key={room.id}>
+      <RoomCard
+        ownerName={room.ownerName}
+        previewUrl={room.previewUrl}
+        roomName={room.name}
+        type={room.type}
+        usersCount={room.usersCount}
+      />
+    </li>
+  ));
 
-  const isLoading = useStore($isActiveRoomsLoading);
-  const error = useStore($activeRoomsError);
-
-  useEffect(() => {
-    onActiveRoomsElementOpened();
-  }, []);
-
-  if (error) {
-    return <>Ошибка: {error}</>;
-  }
-  if (isLoading) {
-    return <>loading</>;
-  }
-
-  return <ul>{activeRooms}</ul>;
+  return <ul className={st.list}>{activeRooms}</ul>;
 }

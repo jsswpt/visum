@@ -1,0 +1,8 @@
+@use "../../../../shared/modules/units.module";
+
+.loader_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: units.$room-card-height;
+}

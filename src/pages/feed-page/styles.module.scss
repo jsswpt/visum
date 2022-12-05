@@ -7,9 +7,15 @@
 
 .page {
   @include breakpoints.screen-xs {
-    padding-bottom: 100px;
+    padding-bottom: units.$bottom-bar-height;
   }
   @include breakpoints.screen-sm {
     padding-bottom: 0;
+  }
+}
+
+.main {
+  section:not(:last-child) {
+    margin-bottom: units.$unit * 6;
   }
 }

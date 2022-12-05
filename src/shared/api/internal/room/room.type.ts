@@ -1,7 +1,7 @@
 export type Room = {
   id: number;
   name: string;
-  ownerId: number;
+  ownerName: string;
   videoUrl: string;
   previewUrl: string;
   usersCount: number;

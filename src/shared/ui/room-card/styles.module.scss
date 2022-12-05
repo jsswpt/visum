@@ -1,0 +1,105 @@
+@use "../../modules/units.module";
+@use "../../modules/typography.module";
+@use "../../modules/breakpoints.module";
+
+.room_card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: units.$room-card-height;
+  width: 100%;
+  border-radius: units.$round;
+
+  background: var(--surface);
+
+  overflow: hidden;
+
+  @include breakpoints.screen-lg {
+    .card_bg {
+      transition: 0.16s ease-in-out;
+
+      filter: grayscale(0.4);
+    }
+
+    &:hover {
+      .card_bg {
+        filter: none;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.card_bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.room_info_wrap {
+  padding: units.$unit * 2;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.64);
+  backdrop-filter: blur(8px) grayscale(0.8);
+}
+
+.info_wrap_top {
+  margin-bottom: units.$unit * 2;
+}
+
+.room_name {
+  @include typography.subtitle1 {
+    color: var(--text-primary);
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.info_wrap_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  filter: grayscale(0);
+}
+
+.info_title {
+  @include typography.subtitle2 {
+    color: var(--text-primary);
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.bottom_wrap {
+  display: flex;
+  gap: units.$unit;
+  align-items: center;
+}
+
+.ownerName_wrap {
+  max-width: 70%;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  color: var(--text-primary);
+}
+
+.locked {
+  color: var(--danger);
+}
+
+.unlocked {
+  color: var(--primary);
+}

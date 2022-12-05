@@ -1,0 +1,30 @@
+@use "../../../../shared/modules/units.module";
+@use "../../../../shared/modules/breakpoints.module";
+
+$gap: units.$unit * 2;
+
+.list {
+  gap: $gap;
+  @include breakpoints.screen-xs {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  @include breakpoints.screen-sm {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - $gap * 0.5));
+  }
+
+  @include breakpoints.screen-lg {
+    display: grid;
+    grid-template-columns: repeat(4, calc(25% - $gap * 0.75));
+  }
+}
+
+.loader_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: units.$room-card-height;
+}

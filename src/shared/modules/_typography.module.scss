@@ -1,0 +1,90 @@
+@mixin h1 {
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.15px;
+
+  @content;
+}
+
+@mixin h2 {
+  font-style: normal;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.15px;
+
+  @content;
+}
+
+@mixin h3 {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.15px;
+
+  @content;
+}
+
+@mixin body1 {
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.15px;
+
+  @content;
+}
+
+@mixin body2 {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.15px;
+
+  @content;
+}
+
+@mixin subtitle1 {
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.15px;
+
+  @content;
+}
+
+@mixin subtitle2 {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.15px;
+
+  @content;
+}
+
+@mixin button-inner {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.48px;
+
+  text-transform: uppercase;
+  @content;
+}
+
+@mixin input-inner {
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+
+  @content;
+}
+
+@mixin overline {
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 12px;
+  @content;
+}

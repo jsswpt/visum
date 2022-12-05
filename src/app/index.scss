@@ -5,11 +5,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
   --primary: #ce50ff;
-  --error: #ef0404;
+  --danger: #ef0404;
   --success: #9de637;
   --warning: #d77229;
 }
