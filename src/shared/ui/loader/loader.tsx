@@ -1,5 +1,6 @@
 import React from "react";
+import st from "./styles.module.scss";
 
 export default function Loader() {
-  return <div>Loading...</div>;
+  return <div className={st.loader}></div>;
 }

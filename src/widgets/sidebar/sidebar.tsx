@@ -6,11 +6,11 @@ import st from "./styles.module.scss";
 
 export default function SidebarChunk() {
   return (
-    <div className={st.sidebar}>
+    <aside className={st.sidebar}>
       <div className={st.sidebar_top}>
         <Logo size="small" />
       </div>
       <Divider />
-    </div>
+    </aside>
   );
 }

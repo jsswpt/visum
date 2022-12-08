@@ -1,9 +1,7 @@
 @use "../../shared/modules/units.module";
 @use "../../shared/modules/breakpoints.module";
 
-.header_wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
+.header {
+  height: units.$header-height;
   width: 100%;
 }

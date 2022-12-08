@@ -1,0 +1,30 @@
+.skeleton {
+  animation: skeleton-anim infinite 2s;
+  .skeleton {
+    animation: skeleton-reversed infinite 2s;
+  }
+}
+
+@keyframes skeleton-anim {
+  0% {
+    background: var(--background);
+  }
+  50% {
+    background: var(--surface);
+  }
+  100% {
+    background: var(--background);
+  }
+}
+
+@keyframes skeleton-anim-reversed {
+  0% {
+    background: var(--surface);
+  }
+  50% {
+    background: var(--background);
+  }
+  100% {
+    background: var(--surface);
+  }
+}

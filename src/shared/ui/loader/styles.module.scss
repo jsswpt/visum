@@ -1,0 +1,22 @@
+.loader {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.16);
+
+  border-top: 2px solid rgba(255, 255, 255, 0.75);
+  border-right: 2px solid rgba(0, 0, 0, 0);
+  border-left: 2px solid rgba(0, 0, 0, 0);
+
+  animation: spin linear infinite 0.96s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
