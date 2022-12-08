@@ -9,15 +9,28 @@ import RoomCard from "shared/ui/room-card/room-card";
 import { useScreen } from "shared/lib/useScreen";
 
 import st from "./styles.module.scss";
+import { $screen } from "shared/idk/screen/screen";
+import { useNavigate } from "react-router-dom";
+import { ROOM } from "shared/api/internal/consts";
 
 export default function RecentRoomsChunk() {
+  const navigate = useNavigate();
+
   const recentRooms = useStore($recentRooms);
 
-  const screen = useScreen();
+  const screen = useStore($screen);
 
   return (
     <Swiper
-      slidesPerView={screen === "xs" ? 1.25 : screen === "sm" ? 2.25 : 3.25}
+      slidesPerView={
+        screen === "xs"
+          ? 1.25
+          : screen === "sm"
+          ? 2.25
+          : screen === "md"
+          ? 2.25
+          : 3.25
+      }
       centeredSlides
       loop
       spaceBetween={16}
@@ -25,11 +38,13 @@ export default function RecentRoomsChunk() {
       {recentRooms.map((room) => (
         <SwiperSlide key={room.id}>
           <RoomCard
+            id={room.id}
             ownerName={room.ownerName}
             previewUrl={room.previewUrl}
             roomName={room.name}
             type={room.type}
             usersCount={room.usersCount}
+            onClick={(id) => navigate(ROOM + id)}
           />
         </SwiperSlide>
       ))}

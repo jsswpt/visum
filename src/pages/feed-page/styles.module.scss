@@ -12,6 +12,15 @@
   @include breakpoints.screen-sm {
     padding-bottom: 0;
   }
+  @include breakpoints.screen-md {
+    max-height: 100vh;
+    .content_wrap {
+      padding-left: units.$sidebar-width;
+    }
+  }
+}
+
+.page_container {
 }
 
 .main {

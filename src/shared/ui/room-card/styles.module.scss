@@ -4,8 +4,6 @@
 
 .room_card {
   position: relative;
-  display: flex;
-  align-items: flex-end;
   height: units.$room-card-height;
   width: 100%;
   border-radius: units.$round;
@@ -41,8 +39,11 @@
 }
 
 .room_info_wrap {
+  position: absolute;
+  left: -2px;
+  width: calc(100% + 4px);
+  bottom: -2px;
   padding: units.$unit * 2;
-  width: 100%;
   background: rgba(0, 0, 0, 0.64);
   backdrop-filter: blur(8px) grayscale(0.8);
 }

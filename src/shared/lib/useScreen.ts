@@ -1,25 +1,28 @@
 import { useCallback, useEffect, useState } from "react";
-import { LG, SM, XS } from "shared/modules/breakpoints";
+import { setScreen, onAppLoaded } from "shared/idk/screen/screen";
+import { LG, MD, SM, XS } from "shared/modules/breakpoints";
 
 export const useScreen = () => {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  const setCurrentWidth = useCallback(() => {
-    setWidth(window.innerWidth);
+  const setScreenType = useCallback((width: number) => {
+    if (width >= XS && width < SM) {
+      setScreen("xs");
+    } else if (width >= SM && width < MD) {
+      setScreen("sm");
+    } else if (width >= MD && width < LG) {
+      setScreen("md");
+    } else if (width >= LG) {
+      setScreen("lg");
+    }
   }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", setCurrentWidth);
+    onAppLoaded(window.innerWidth);
+    window.addEventListener("resize", () => setScreenType(window.innerWidth));
 
     return () => {
-      window.removeEventListener("resize", setCurrentWidth);
+      window.removeEventListener("resize", () =>
+        setScreenType(window.innerWidth)
+      );
     };
   }, []);
-
-  if (width > XS && width < SM) {
-    return "xs";
-  } else if (width >= SM && width < LG) {
-    return "sm";
-  }
-  return "lg";
 };

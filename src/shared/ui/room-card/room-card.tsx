@@ -10,11 +10,13 @@ import st from "./styles.module.scss";
 import Card from "../card/card";
 
 type RoomCard = {
+  id: number;
   previewUrl: string;
   ownerName: string;
   type: "private" | "public";
   roomName: string;
   usersCount: number;
+  onClick?: (id: number) => void;
 };
 
 export default function RoomCard(props: RoomCard) {
@@ -24,7 +26,14 @@ export default function RoomCard(props: RoomCard) {
     cardRef.current!.style.backgroundImage = `url(${props.previewUrl})`;
   }, []);
   return (
-    <Card className={st.room_card}>
+    <Card
+      className={st.room_card}
+      onClick={() => {
+        if (props.onClick) {
+          props.onClick(props.id);
+        }
+      }}
+    >
       <div className={st.card_bg} ref={cardRef}></div>
       <div className={st.room_info_wrap}>
         <div className={st.info_wrap_top}>

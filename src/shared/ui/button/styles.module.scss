@@ -1,0 +1,104 @@
+@use "../../modules/typography.module";
+@use "../../modules/units.module";
+
+.button {
+  padding: 0 units.$unit * 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 146px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  border-radius: units.$round;
+
+  transition: 0.16s ease-in-out;
+
+  @include typography.button-inner;
+}
+
+.small {
+  height: units.$small;
+}
+
+.medium {
+  height: units.$medium;
+}
+
+.large {
+  height: units.$large;
+}
+
+.bg_primary {
+  background: var(--primary);
+}
+
+.bg_warning {
+  background: var(--warning);
+}
+
+.bg_danger {
+  background: var(--danger);
+}
+
+.bg_success {
+  background: var(--success);
+}
+
+.bg_inherit {
+  background: var(--inherit);
+}
+
+.color_primary {
+  color: var(--primary);
+}
+
+.color_warning {
+  color: var(--warning);
+}
+
+.color_danger {
+  color: var(--danger);
+}
+
+.color_success {
+  color: var(--success);
+}
+
+.color_inherit {
+  color: var(--text-primary);
+}
+
+.border_primary {
+  border: 1px solid var(--primary);
+}
+
+.border_warning {
+  border: 1px solid var(--warning);
+}
+
+.border_danger {
+  border: 1px solid var(--danger);
+}
+
+.border_success {
+  border: 1px solid var(--success);
+}
+
+.border_inherit {
+  border: 1px solid var(--text-primary);
+}
+
+.inherit {
+  &:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.contained {
+  color: var(--text-primary);
+  &:hover {
+    filter: brightness(1.05);
+  }
+}

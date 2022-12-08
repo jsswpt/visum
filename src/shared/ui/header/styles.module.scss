@@ -4,4 +4,6 @@
   display: flex;
   align-items: center;
   height: units.$header-height;
+  width: 100%;
+  background: var(--background);
 }

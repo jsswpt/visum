@@ -16,9 +16,14 @@ $gap: units.$unit * 2;
     grid-template-columns: repeat(2, calc(50% - $gap * 0.5));
   }
 
+  @include breakpoints.screen-md {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - $gap * 0.5));
+  }
+
   @include breakpoints.screen-lg {
     display: grid;
-    grid-template-columns: repeat(4, calc(25% - $gap * 0.75));
+    grid-template-columns: repeat(3, calc(33% - $gap * 0.5));
   }
 }
 
