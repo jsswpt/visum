@@ -1,6 +1,13 @@
+import { useStore } from "effector-react";
+import { $authed } from "entities/session";
 import { RouterProvider } from "react-router-dom";
-import { publicRoutesConfig } from "./routes-config";
+import { privateRoutesConfig, publicRoutesConfig } from "./routes-config";
 
 export default function Routing() {
-  return <RouterProvider router={publicRoutesConfig} />;
+  const isAuth = useStore($authed);
+  return (
+    <RouterProvider
+      router={isAuth ? privateRoutesConfig : publicRoutesConfig}
+    />
+  );
 }
