@@ -5,3 +5,9 @@
   height: units.$header-height;
   width: 100%;
 }
+
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

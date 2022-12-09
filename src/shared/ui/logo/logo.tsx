@@ -15,6 +15,7 @@ export default function Logo(props: Logo) {
 
   return (
     <img
+      loading="lazy"
       src={type === "dark" ? LogoLight : LogoDark}
       alt="Logo"
       className={classNames(st.logo, {

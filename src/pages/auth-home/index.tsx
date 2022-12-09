@@ -1,13 +1,15 @@
 import { Suspense, lazy } from "react";
 
+import st from "./styles.module.scss";
+
 import Loader from "shared/ui/loader/loader";
 
-const BottomBarChunk = lazy(() => import("./bottom-bar"));
+const AuthHomeChunk = lazy(() => import("./auth-home"));
 
-export default function BottomBar() {
+export default function AuthHome() {
   return (
     <Suspense fallback={<Loader />}>
-      <BottomBarChunk />
+      <AuthHomeChunk />
     </Suspense>
   );
 }

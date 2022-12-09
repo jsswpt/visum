@@ -6,12 +6,11 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import RoomCard from "shared/ui/room-card/room-card";
 
-import { useScreen } from "shared/lib/useScreen";
-
-import st from "./styles.module.scss";
 import { $screen } from "shared/idk/screen/screen";
 import { useNavigate } from "react-router-dom";
-import { ROOM } from "shared/api/internal/consts";
+import { publicNavigation } from "shared/api/internal/consts/routes";
+
+import st from "./styles.module.scss";
 
 export default function RecentRoomsChunk() {
   const navigate = useNavigate();
@@ -44,7 +43,7 @@ export default function RecentRoomsChunk() {
             roomName={room.name}
             type={room.type}
             usersCount={room.usersCount}
-            onClick={(id) => navigate(ROOM + id)}
+            onClick={(id) => navigate(publicNavigation.ROOM + id)}
           />
         </SwiperSlide>
       ))}

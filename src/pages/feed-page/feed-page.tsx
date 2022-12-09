@@ -3,17 +3,19 @@ import { useStore } from "effector-react";
 import Container from "shared/ui/container/container";
 import Divider from "shared/ui/divider/divider";
 import FeedBlockLayout from "shared/ui/feed-block-layout/feed-block-layout";
-import BottomBar from "widgets/bottom-bar";
 import Sidebar from "widgets/sidebar";
+import Helmet from "react-helmet";
 
-import st from "./styles.module.scss";
 import { $screen } from "shared/idk/screen/screen";
 import FeedHeader from "widgets/feed-header";
+import st from "./styles.module.scss";
+import BottomNavBar from "widgets/bottom-nav-bar";
 
 export default function FeedPageChunk() {
   const screen = useStore($screen);
   return (
     <div className={st.page}>
+      <Helmet title="Feed | Visum" />
       <div className={st.page_container}>
         {screen !== "xs" && screen !== "sm" && (
           <div className={st.sidebar_wrap}>
@@ -41,7 +43,7 @@ export default function FeedPageChunk() {
           <footer>
             <Container>footer</Container>
           </footer>
-          {screen !== "md" && screen !== "lg" && <BottomBar />}
+          {screen !== "md" && screen !== "lg" && <BottomNavBar />}
         </div>
       </div>
     </div>

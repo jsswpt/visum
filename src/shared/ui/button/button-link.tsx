@@ -76,6 +76,8 @@ export default function ButtonLink(props: ButtonLink) {
           props.color === "warning" && props.variant === "outlined",
         [st.border_danger]:
           props.color === "danger" && props.variant === "outlined",
+
+        [st.fullWidth]: props.fullWidth,
       })}
     >
       {props.children}

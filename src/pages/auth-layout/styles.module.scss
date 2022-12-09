@@ -1,0 +1,52 @@
+@use "../../shared/modules/units.module";
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.header,
+.main,
+.footer,
+section {
+  width: 100%;
+}
+
+.header {
+  height: units.$header-height;
+  display: flex;
+  align-items: center;
+}
+
+.header_container {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.auth_section {
+  display: flex;
+  justify-content: center;
+}
+
+.auth_section_container {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: units.$unit * 3;
+}
+
+.extra_wrap {
+  width: 100%;
+}

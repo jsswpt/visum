@@ -100,5 +100,15 @@
   color: var(--text-primary);
   &:hover {
     filter: brightness(1.05);
+    transform: scale(1.01);
   }
+  &:active {
+    transition: 0.08s;
+    filter: brightness(0.95);
+    transform: scale(0.99);
+  }
+}
+
+.fullWidth {
+  width: 100%;
 }
