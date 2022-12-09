@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/209.420fb10e.chunk.js","mappings":"qKAEe,SAASA,IACtB,OAAO,+CACT,C","sources":["pages/room-index-page/room-index-page.tsx"],"sourcesContent":["import React from \"react\";\r\n\r\nexport default function RoomIndexPageChunk() {\r\n  return <div>RoomIndexPageChunk</div>;\r\n}\r\n"],"names":["RoomIndexPageChunk"],"sourceRoot":""}

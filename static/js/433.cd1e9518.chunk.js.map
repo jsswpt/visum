@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/433.cd1e9518.chunk.js","mappings":"qKAEe,SAASA,IACtB,OAAO,oCACT,C","sources":["pages/my-rooms-page/my-rooms-page.tsx"],"sourcesContent":["import React from \"react\";\r\n\r\nexport default function MyRoomsPageChunk() {\r\n  return <div>MyRooms</div>;\r\n}\r\n"],"names":["MyRoomsPageChunk"],"sourceRoot":""}

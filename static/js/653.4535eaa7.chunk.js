@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkvisum=self.webpackChunkvisum||[]).push([[653],{3653:function(u,n,e){e.r(n),e.d(n,{default:function(){return r}});e(2791);var i=e(184);function r(){return(0,i.jsx)("div",{children:"RoomPage"})}}}]);
+//# sourceMappingURL=653.4535eaa7.chunk.js.map

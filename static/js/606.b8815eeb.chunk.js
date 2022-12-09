@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkvisum=self.webpackChunkvisum||[]).push([[606],{606:function(n,t,s){s.r(t),s.d(t,{default:function(){return i}});s(2791);var u=s(8749),e="styles_bottom_bar__0bXZD",r=s(184);function c(){return(0,r.jsx)("div",{className:e,children:(0,r.jsx)(u.Z,{children:"BottomBar"})})}function i(){return(0,r.jsx)(c,{})}}}]);
+//# sourceMappingURL=606.b8815eeb.chunk.js.map

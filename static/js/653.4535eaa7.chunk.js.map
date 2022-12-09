@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/653.4535eaa7.chunk.js","mappings":"qKAEe,SAASA,IACtB,OAAO,qCACT,C","sources":["pages/room-page/room-page.tsx"],"sourcesContent":["import React from \"react\";\r\n\r\nexport default function RoomPageChunk() {\r\n  return <div>RoomPage</div>;\r\n}\r\n"],"names":["RoomPageChunk"],"sourceRoot":""}

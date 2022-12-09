@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/6.3777f3d4.chunk.css","mappings":"AAAA,oBACE,mBAGF,qBACE,YAEF,sBACE,YAEF,sBACE","sources":["shared/ui/logo/styles.module.scss"],"sourcesContent":[".logo {\r\n  object-fit: contain;\r\n}\r\n\r\n.small {\r\n  height: 40px;\r\n}\r\n.medium {\r\n  height: 64px;\r\n}\r\n.large {\r\n  height: 104px;\r\n}\r\n"],"names":[],"sourceRoot":""}

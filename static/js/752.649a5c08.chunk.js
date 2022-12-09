@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkvisum=self.webpackChunkvisum||[]).push([[752],{9752:function(n,u,e){e.r(u),e.d(u,{default:function(){return i}});e(2791);var s=e(184);function i(){return(0,s.jsx)("div",{children:"FriendsRooms"})}}}]);
+//# sourceMappingURL=752.649a5c08.chunk.js.map

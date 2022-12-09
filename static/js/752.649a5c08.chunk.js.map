@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/752.649a5c08.chunk.js","mappings":"qKAEe,SAASA,IACtB,OAAO,yCACT,C","sources":["pages/friends-rooms-page/friends-rooms-page.tsx"],"sourcesContent":["import React from \"react\";\r\n\r\nexport default function FriendsRoomsPageChunk() {\r\n  return <div>FriendsRooms</div>;\r\n}\r\n"],"names":["FriendsRoomsPageChunk"],"sourceRoot":""}
