@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/414.6f303c81.chunk.js","mappings":"6JAEe,SAASA,IACtB,OAAO,4CACT,C","sources":["pages/sign-up-page/sign-up-page.tsx"],"sourcesContent":["import st from \"./styles.module.scss\";\r\n\r\nexport default function SignUpPageChunk() {\r\n  return <div>SignUpPageChunk</div>;\r\n}\r\n"],"names":["SignUpPageChunk"],"sourceRoot":""}
