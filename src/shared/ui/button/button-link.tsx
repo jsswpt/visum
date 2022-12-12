@@ -8,12 +8,14 @@ import st from "./styles.module.scss";
 interface ButtonLink extends ButtonBase {
   to: string;
   fullWidth?: boolean;
+  onClick?: () => void;
 }
 
 export default function ButtonLink(props: ButtonLink) {
   return (
     <Link
       {...props}
+      onClick={() => props.onClick && props.onClick}
       className={classNames(st.button, props.className, {
         [st.contained]: props.variant === "contained",
         [st.inherit]: props.variant === "inherit" || !props.variant,

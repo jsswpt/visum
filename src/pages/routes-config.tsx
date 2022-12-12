@@ -2,10 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import { privateRoutes, publicRoutes } from "shared/api/internal/consts";
 import AuthHome from "./auth-home";
 import AuthLayout from "./auth-layout";
+import AvatarPage from "./avatar-page";
+import EmailLoginPage from "./email-login-page";
 
 import FeedPage from "./feed-page";
 import FriendsRoomsPage from "./friends-rooms-page";
 import MyRoomsPage from "./my-rooms-page";
+import PasswordPage from "./password-page";
 import RoomIndexPage from "./room-index-page";
 import RoomPage from "./room-page";
 import RoomsLayout from "./rooms-layout/rooms-layout";
@@ -19,7 +22,24 @@ export const publicRoutesConfig = createBrowserRouter([
     children: [
       { path: publicRoutes.AUTH_HOME, element: <AuthHome /> },
       { path: publicRoutes.SIGN_IN, element: <SignInPage /> },
-      { path: publicRoutes.SIGN_UP, element: <SignUpPage /> },
+      {
+        path: publicRoutes.SIGN_UP,
+        element: <SignUpPage />,
+        children: [
+          {
+            path: publicRoutes.EMAIL_LOGIN,
+            element: <EmailLoginPage />,
+          },
+          {
+            path: publicRoutes.AVATAR,
+            element: <AvatarPage />,
+          },
+          {
+            path: publicRoutes.PASSWORD,
+            element: <PasswordPage />,
+          },
+        ],
+      },
     ],
   },
   { path: publicRoutes.FEED, element: <FeedPage /> },

@@ -1,5 +1,10 @@
-import st from "./styles.module.scss";
+import { Outlet } from "react-router";
+import AuthBlockLayout from "shared/ui/auth-block-layout";
 
 export default function SignUpPageChunk() {
-  return <div>SignUpPageChunk</div>;
+  return (
+    <AuthBlockLayout blockTitle="Создайте аккаунт, чтобы начать смотреть видео с друзьями">
+      <Outlet />
+    </AuthBlockLayout>
+  );
 }

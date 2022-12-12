@@ -5,7 +5,10 @@ export const publicRoutes = {
   AUTH_LAYOUT: "/auth/",
   AUTH_HOME: "",
   SIGN_IN: "sign-in",
-  SIGN_UP: "sign-up",
+  SIGN_UP: "sign-up/",
+  EMAIL_LOGIN: "",
+  AVATAR: "avatar",
+  PASSWORD: "password",
 };
 
 export const publicNavigation = {
@@ -16,6 +19,9 @@ export const publicNavigation = {
   AUTH_HOME: `${publicRoutes.AUTH_LAYOUT}${publicRoutes.AUTH_HOME}`,
   SIGN_IN: `${publicRoutes.AUTH_LAYOUT}${publicRoutes.SIGN_IN}`,
   SIGN_UP: `${publicRoutes.AUTH_LAYOUT}${publicRoutes.SIGN_UP}`,
+  EMAIL_LOGIN: `${publicRoutes.AUTH_LAYOUT}${publicRoutes.SIGN_UP}${publicRoutes.EMAIL_LOGIN}`,
+  AVATAR: `${publicRoutes.AUTH_LAYOUT}${publicRoutes.SIGN_UP}${publicRoutes.AVATAR}`,
+  PASSWORD: `${publicRoutes.AUTH_LAYOUT}${publicRoutes.SIGN_UP}${publicRoutes.PASSWORD}`,
 };
 
 export const privateRoutes = {

@@ -1,0 +1,17 @@
+@use "../../modules/typography.module";
+@use "../../modules/units.module";
+
+.layout {
+  width: 100%;
+}
+
+.layout_top {
+  margin-bottom: units.$unit * 3;
+}
+
+.title {
+  @include typography.body1 {
+    color: var(--text-primary);
+    text-align: center;
+  }
+}

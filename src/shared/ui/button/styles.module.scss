@@ -11,6 +11,8 @@
   text-decoration: none;
   text-transform: uppercase;
 
+  color: var(--text-primary);
+
   border-radius: units.$round;
 
   transition: 0.16s ease-in-out;
@@ -44,6 +46,7 @@
 
 .bg_success {
   background: var(--success);
+  color: var(--background);
 }
 
 .bg_inherit {
@@ -91,20 +94,20 @@
 }
 
 .inherit {
-  &:hover {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
-  }
 }
 
 .contained {
-  color: var(--text-primary);
+}
+
+.inherit,
+.outlined {
   &:hover {
-    filter: brightness(1.05);
+    backdrop-filter: brightness(1.2);
     transform: scale(1.01);
   }
   &:active {
     transition: 0.08s;
-    filter: brightness(0.95);
+    backdrop-filter: brightness(0.5);
     transform: scale(0.99);
   }
 }

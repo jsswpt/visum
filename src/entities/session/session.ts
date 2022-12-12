@@ -11,6 +11,8 @@ export const $isLoading = createStore(false);
 
 export const $authed = createStore(false);
 
+const $password = createStore("");
+
 /**При загрузке приложения запрашиваем юзера */
 sample({
   clock: onAppLoaded,
@@ -34,6 +36,20 @@ sample({
 sample({
   clock: getCurrentUserFx.doneData,
   target: $session,
+});
+
+sample({
+  clock: $session,
+  source: { authed: $authed, password: $password },
+  filter: ({ authed, password }, session) => {
+    if (!authed && session?.email && session.username && password) {
+      return true;
+    }
+    return false;
+  },
+  fn: () => {
+    console.log("srabotal");
+  },
 });
 
 /**Срабатывает, когда происходит запрос получения юзера */

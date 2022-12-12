@@ -1,0 +1,19 @@
+@use "../../../../shared/modules/units.module";
+
+.form_layout {
+  display: flex;
+  flex-direction: column;
+  gap: units.$unit * 2;
+}
+
+.form_top {
+  display: flex;
+  flex-direction: column;
+  gap: units.$unit * 2;
+}
+
+.form_bottom {
+  display: flex;
+  flex-direction: column;
+  gap: units.$unit * 2;
+}
