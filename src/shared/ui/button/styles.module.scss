@@ -2,6 +2,7 @@
 @use "../../modules/units.module";
 
 .button {
+  position: relative;
   padding: 0 units.$unit * 3;
   display: flex;
   align-items: center;
@@ -10,12 +11,23 @@
   min-width: 146px;
   text-decoration: none;
   text-transform: uppercase;
+  overflow: hidden;
 
   color: var(--text-primary);
 
   border-radius: units.$round;
 
   transition: 0.16s ease-in-out;
+
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+    filter: grayscale(0.8);
+  }
 
   @include typography.button-inner;
 }
@@ -97,18 +109,23 @@
 }
 
 .contained {
+  &:hover {
+    filter: brightness(1.1);
+  }
+  &:active {
+    transition: 0.08s;
+    filter: brightness(0.9);
+  }
 }
 
 .inherit,
 .outlined {
   &:hover {
-    backdrop-filter: brightness(1.2);
-    transform: scale(1.01);
+    backdrop-filter: brightness(1.1);
   }
   &:active {
     transition: 0.08s;
-    backdrop-filter: brightness(0.5);
-    transform: scale(0.99);
+    backdrop-filter: brightness(0.9);
   }
 }
 

@@ -1,10 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic);
-
+@import url(https://fonts.googleapis.com/css?family=Mulish:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
+  font-family: "Mulish", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -24,6 +23,6 @@ body {
   --surface: #2c2b2b;
   --text-primary: #f1e6e6;
   --text-secondary: #7b6e6e;
-  --stroke: rgba(255, 255, 255, 0.04);
+  --stroke: rgba(255, 255, 255, 0.08);
   --opacity-surface: rgba(44, 43, 43, 0.6);
 }
