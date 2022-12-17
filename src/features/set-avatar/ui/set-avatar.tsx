@@ -1,5 +1,8 @@
+import { useStore } from "effector-react";
+import { $session } from "entities/session";
 import AuthFormLayout from "entities/session/ui/auth-form-layout/auth-form-layout";
 import React from "react";
+import { Navigate } from "react-router-dom";
 import { publicNavigation } from "shared/api/internal/consts/routes";
 import Avatar from "shared/ui/avatar";
 import ButtonLink from "shared/ui/button/button-link";

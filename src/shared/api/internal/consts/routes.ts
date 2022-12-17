@@ -1,14 +1,16 @@
+const baseUrl = process.env.BASE_URL || "";
+
 export const publicRoutes = {
-  FEED: "/",
-  ROOM_INDEX: "/room/",
-  ROOM: "/room/",
-  AUTH_LAYOUT: "/auth/",
-  AUTH_HOME: "",
-  SIGN_IN: "sign-in",
-  SIGN_UP: "sign-up/",
-  EMAIL_LOGIN: "",
-  AVATAR: "avatar",
-  PASSWORD: "password",
+  FEED: `${baseUrl}/`,
+  ROOM_INDEX: `${baseUrl}/room/`,
+  ROOM: `${baseUrl}/room/`,
+  AUTH_LAYOUT: `${baseUrl}/auth/`,
+  AUTH_HOME: ``,
+  SIGN_IN: `sign-in`,
+  SIGN_UP: `sign-up/`,
+  EMAIL_LOGIN: ``,
+  AVATAR: `avatar`,
+  PASSWORD: `password`,
 };
 
 export const publicNavigation = {
@@ -25,12 +27,12 @@ export const publicNavigation = {
 };
 
 export const privateRoutes = {
-  FEED: "/",
-  ROOMS_LAYOUT: "/rooms/",
-  MY_ROOMS: "",
-  FRIENDS_ROOMS: "friends",
-  ROOM_INDEX: "/room/",
-  ROOM: "/room/",
+  FEED: `${baseUrl}/`,
+  ROOMS_LAYOUT: `${baseUrl}/rooms/`,
+  MY_ROOMS: ``,
+  FRIENDS_ROOMS: `friends`,
+  ROOM_INDEX: `${baseUrl}/room/`,
+  ROOM: `${baseUrl}/room/`,
 };
 
 export const privateNavigation = {

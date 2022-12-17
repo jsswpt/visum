@@ -4,8 +4,9 @@ import Routing from "pages/routing";
 import { useEffect } from "react";
 import { useScreen } from "shared/lib/useScreen";
 import PageLoader from "shared/ui/page-loader/page-loader";
-import "./index.scss";
 import { withProviders } from "./providers/with-providers";
+
+import "./index.scss";
 
 export const App = withProviders(() => {
   useScreen();
@@ -14,8 +15,6 @@ export const App = withProviders(() => {
   }, []);
 
   const isLoading = useStore($isLoading);
-
-  console.log(isLoading);
 
   return isLoading ? <PageLoader /> : <Routing />;
 });
