@@ -1,5 +1,4 @@
 import AuthFormLayout from "entities/session/ui/auth-form-layout/auth-form-layout";
-import React from "react";
 import { publicNavigation } from "shared/api/internal/consts/routes";
 import AuthBlockLayout from "shared/ui/auth-block-layout/";
 import ButtonLink from "shared/ui/button/button-link";

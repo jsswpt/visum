@@ -1,6 +1,6 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import { publicRoutes } from "shared/api/internal/consts";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import { publicNavigation } from "shared/api/internal/consts/routes";
 import Button from "shared/ui/button/button";
 import ButtonLink from "shared/ui/button/button-link";
 import Container from "shared/ui/container/container";
@@ -11,16 +11,32 @@ import Logo from "shared/ui/logo/logo";
 import st from "./styles.module.scss";
 
 export default function AuthLayoutChunk() {
+  const location = useLocation();
+
+  const fixedPath = publicNavigation.AUTH_HOME.split("")
+    .filter((item) => item !== "/")
+    .join("");
+
   return (
     <div className={st.page}>
-      <Header>
-        <Container className={st.header_container}>
-          <ButtonLink to={publicRoutes.FEED} variant="inherit" color="primary">
-            Назад
-          </ButtonLink>
-        </Container>
-      </Header>
-      <Divider />
+      {location.pathname !== publicNavigation.AUTH_HOME &&
+        location.pathname !== "/" + fixedPath && (
+          <>
+            <Header>
+              <Container className={st.header_container}>
+                <ButtonLink
+                  relative="path"
+                  to=".."
+                  variant="inherit"
+                  color="primary"
+                >
+                  Назад
+                </ButtonLink>
+              </Container>
+            </Header>
+            <Divider />
+          </>
+        )}
       <main className={st.main}>
         <section className={st.auth_section}>
           <Container className={st.auth_section_container}>
@@ -30,7 +46,7 @@ export default function AuthLayoutChunk() {
               </div>
               <Outlet />
               <div className={st.auth_extra_wrap}>
-                <ButtonLink to="?" fullWidth>
+                <ButtonLink to={publicNavigation.FEED} fullWidth>
                   Продолжить без аккаунта
                 </ButtonLink>
               </div>
