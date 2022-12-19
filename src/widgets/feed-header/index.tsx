@@ -2,7 +2,7 @@ import { Suspense, lazy } from "react";
 
 import st from "./styles.module.scss";
 
-import Skeleton from "shared/ui/skeleton/skeleton";
+import Skeleton from "react-loading-skeleton";
 
 const HeaderChunk = lazy(() => import("./feed-header"));
 

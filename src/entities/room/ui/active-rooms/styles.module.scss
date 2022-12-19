@@ -26,10 +26,3 @@ $gap: units.$unit * 2;
     grid-template-columns: repeat(3, calc(33% - $gap * 0.5));
   }
 }
-
-.loader_wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: units.$room-card-height;
-}

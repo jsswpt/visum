@@ -3,100 +3,64 @@
 @use "../../modules/breakpoints.module";
 
 .room_card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: units.$unit * 2;
   height: units.$room-card-height;
   width: 100%;
-  border-radius: units.$round;
-
-  background: var(--surface);
-
   overflow: hidden;
-
-  @include breakpoints.screen-lg {
-    .card_bg {
-      will-change: background, filter, transform;
-      transition: 0.16s ease-in-out;
-
-      filter: grayscale(0.4);
-    }
-
-    &:hover {
-      .card_bg {
-        filter: none;
-        transform: scale(1.03);
-      }
-    }
-  }
 }
 
-.card_bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.img_wrap {
+  height: 80%;
+  background: var(--surface);
+  border-radius: units.$round;
+  overflow: hidden;
 }
 
-.preview {
+.img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  pointer-events: none;
-  cursor: default;
 }
 
-.room_info_wrap {
-  position: absolute;
-  left: -2px;
-  width: calc(100% + 4px);
-  bottom: -2px;
-  padding: units.$unit * 2;
-  will-change: filter, backdrop-filter, transform;
+.info_wrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: units.$unit;
 
-  background: var(--opacity-surface);
-  backdrop-filter: blur(8px) grayscale(0.8);
-}
-
-.info_wrap_top {
-  margin-bottom: units.$unit * 2;
-}
-
-.room_name {
-  @include typography.subtitle1 {
-    color: var(--text-primary);
+  &* {
     width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 }
 
-.info_wrap_bottom {
+.info_bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  filter: grayscale(0);
-}
-
-.info_title {
-  @include typography.subtitle2 {
-    color: var(--text-primary);
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
 }
 
 .bottom_wrap {
   display: flex;
-  gap: units.$unit;
   align-items: center;
+  gap: units.$unit / 2;
 }
 
-.ownerName_wrap {
-  max-width: 70%;
+.title {
+  @include typography.subtitle1 {
+    color: var(--text-primary);
+  }
+}
+.subtitle {
+  @include typography.subtitle2 {
+    color: var(--text-secondary);
+  }
+}
+
+.subtitle_skeleton {
+  height: 14px;
+  width: 25px;
 }
 
 .icon {
@@ -104,7 +68,7 @@
   display: flex;
   width: 20px;
   height: 20px;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .locked {
@@ -113,4 +77,8 @@
 
 .unlocked {
   color: var(--primary);
+}
+
+.pointer {
+  cursor: pointer;
 }

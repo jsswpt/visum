@@ -6,13 +6,11 @@
   z-index: 1500;
   background: var(--background);
 
-  @include breakpoints.screen-md {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: units.$sidebar-width;
-  }
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: units.$sidebar-width;
 }
 
 .sidebar_top {

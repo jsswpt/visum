@@ -2,12 +2,28 @@
 @use "../../shared/modules/breakpoints.module";
 
 .header {
-  height: units.$header-height;
+  z-index: 10000;
   width: 100%;
+  height: units.$header-height;
+
+  @include breakpoints.screen-md {
+    position: fixed;
+    top: 0;
+    left: units.$sidebar-width;
+    width: calc(100% - units.$sidebar-width);
+  }
 }
 
 .header_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.divider {
+  @include breakpoints.screen-md {
+    position: fixed;
+    top: units.$header-height;
+    width: 100%;
+  }
 }

@@ -1,8 +1,19 @@
 @use "../../../../shared/modules/units.module";
+@use "../../../../shared/modules/breakpoints.module";
 
-.loader_wrap {
+.wrap {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: units.$room-card-height;
+  gap: units.$unit * 2;
+
+  @include breakpoints.screen-xs {
+    &*:nth-child(1) {
+      display: none;
+    }
+    &*:nth-child(2) {
+      display: none;
+    }
+    &*:nth-child(3) {
+      display: block;
+    }
+  }
 }

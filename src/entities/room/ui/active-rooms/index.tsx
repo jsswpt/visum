@@ -5,6 +5,7 @@ import {
 } from "entities/room/room";
 import { Suspense, lazy, useEffect } from "react";
 import Loader from "shared/ui/loader/loader";
+import RoomCardSkeleton from "shared/ui/room-card/room-card-skeleton";
 
 import st from "./styles.module.scss";
 
@@ -20,15 +21,49 @@ export const ActiveRooms = () => {
   return (
     <Suspense
       fallback={
-        <div className={st.loader_wrap}>
-          <Loader />
-        </div>
+        <ul className={st.list}>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+        </ul>
       }
     >
       {isLoading ? (
-        <div className={st.loader_wrap}>
-          <Loader />
-        </div>
+        <ul className={st.list}>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+          <li>
+            <RoomCardSkeleton />
+          </li>
+        </ul>
       ) : (
         <ActiveRoomsChunk />
       )}

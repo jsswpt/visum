@@ -16,35 +16,28 @@ export default function FeedPageChunk() {
   return (
     <div className={st.page}>
       <Helmet title="Feed | Visum" />
-      <div className={st.page_container}>
-        {screen !== "xs" && screen !== "sm" && (
-          <div className={st.sidebar_wrap}>
-            <Sidebar />
-          </div>
-        )}
-        <div className={st.content_wrap}>
-          <FeedHeader />
+      {screen !== "xs" && screen !== "sm" && <Sidebar />}
+      <div className={st.content_wrap}>
+        <FeedHeader />
+        <main className={st.main}>
+          <FeedBlockLayout blockTitle="Недавние комнаты">
+            <Container>
+              <RecentRooms />
+            </Container>
+          </FeedBlockLayout>
+          <FeedBlockLayout blockTitle="Активные комнаты">
+            <Container>
+              <ActiveRooms />
+            </Container>
+          </FeedBlockLayout>
+        </main>
+        <Container>
           <Divider />
-          <main className={st.main}>
-            <FeedBlockLayout blockTitle="Недавние комнаты">
-              <Container>
-                <RecentRooms />
-              </Container>
-            </FeedBlockLayout>
-            <FeedBlockLayout blockTitle="Активные комнаты">
-              <Container>
-                <ActiveRooms />
-              </Container>
-            </FeedBlockLayout>
-          </main>
-          <Container>
-            <Divider />
-          </Container>
-          <footer>
-            <Container>footer</Container>
-          </footer>
-          {screen !== "md" && screen !== "lg" && <BottomNavBar />}
-        </div>
+        </Container>
+        <footer>
+          <Container>footer</Container>
+        </footer>
+        {screen !== "md" && screen !== "lg" && <BottomNavBar />}
       </div>
     </div>
   );

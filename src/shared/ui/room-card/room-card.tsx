@@ -6,8 +6,12 @@ import {
   MdPersonOutline,
 } from "react-icons/md";
 
-import st from "./styles.module.scss";
 import Card from "../card/card";
+import { useInView } from "react-intersection-observer";
+
+import cn from "classnames";
+import st from "./styles.module.scss";
+import RoomCardSkeleton from "./room-card-skeleton";
 
 type RoomCard = {
   id: number;
@@ -20,52 +24,40 @@ type RoomCard = {
 };
 
 export default function RoomCard(props: RoomCard) {
-  const cardRef = createRef<HTMLDivElement>();
-  useEffect(() => {
-    if (props.onClick) {
-      if (cardRef.current) {
-        cardRef.current.style.cursor = "pointer";
-      }
-    }
-  }, [cardRef]);
+  const { ref, inView } = useInView({ threshold: 0.25, triggerOnce: true });
+
   return (
-    <Card
-      ref={cardRef}
-      className={st.room_card}
+    <div
+      ref={ref}
+      className={cn(st.room_card, props.onClick && st.pointer)}
       onClick={() => {
         if (props.onClick) {
           props.onClick(props.id);
         }
       }}
     >
-      <div className={st.card_bg}>
-        <img
-          loading="lazy"
-          src={props.previewUrl}
-          alt={`Room's №${props.id} preview`}
-          className={st.preview}
-        />
+      <div className={st.img_wrap}>
+        {inView && <img src={props.previewUrl} alt="" className={st.img} />}
       </div>
-      <div className={st.room_info_wrap}>
-        <div className={st.info_wrap_top}>
-          <p className={st.room_name}>{props.roomName}</p>
+      <div className={st.info_wrap}>
+        <div className={st.info_top}>
+          <p className={st.title}>{props.roomName}</p>
         </div>
-        <div className={st.info_wrap_bottom}>
-          <div className={classNames(st.bottom_wrap, st.ownerName_wrap)}>
+        <div className={st.info_bottom}>
+          <div className={st.bottom_wrap}>
             {props.type === "private" ? (
-              <MdLockOutline className={classNames(st.icon, st.locked)} />
+              <MdLockOutline className={cn(st.icon)} />
             ) : (
-              <MdOutlineLockOpen className={classNames(st.icon, st.unlocked)} />
+              <MdOutlineLockOpen className={cn(st.icon)} />
             )}
-
-            <p className={st.info_title}>{props.ownerName}</p>
+            <p className={st.subtitle}>{props.ownerName}</p>
           </div>
           <div className={st.bottom_wrap}>
-            <MdPersonOutline className={classNames(st.icon, st.person)} />
-            <p className={st.info_title}>{props.usersCount}</p>
+            <MdPersonOutline className={cn(st.icon)} />
+            <p className={st.subtitle}>{props.usersCount}</p>
           </div>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }

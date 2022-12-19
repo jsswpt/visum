@@ -1,4 +1,4 @@
-import { getRandomInt } from "shared/lib/getRandomInt";
+import { getRandomInt } from "shared/lib/get-random-int";
 import { Room } from "./room.type";
 
 const recentRooms: Room[] = [

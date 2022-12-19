@@ -1,4 +1,6 @@
-const baseUrl = process.env.BASE_URL || "";
+import { getEnvVar } from "shared/lib/get-env-var";
+
+const baseUrl = getEnvVar("REACT_APP_BASE_URL") || "";
 
 export const publicRoutes = {
   FEED: `${baseUrl}/`,
