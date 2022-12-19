@@ -18,7 +18,6 @@ export default function ActiveRoomsChunk() {
         roomName={room.name}
         type={room.type}
         usersCount={room.usersCount}
-        onClick={(id) => navigate(publicNavigation.ROOM + id)}
       />
     </li>
   ));

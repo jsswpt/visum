@@ -12,8 +12,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/scrollbar";
 
-import st from "./styles.module.scss";
-
 const RecentRoomsChunk = lazy(() => import("./recent-rooms"));
 
 export const RecentRooms = () => {
@@ -45,6 +43,15 @@ export const RecentRooms = () => {
           <SwiperSlide>
             <RoomCardSkeleton />
           </SwiperSlide>
+          <SwiperSlide>
+            <RoomCardSkeleton />
+          </SwiperSlide>
+          <SwiperSlide>
+            <RoomCardSkeleton />
+          </SwiperSlide>
+          <SwiperSlide>
+            <RoomCardSkeleton />
+          </SwiperSlide>
         </Swiper>
       }
     >
@@ -63,6 +70,15 @@ export const RecentRooms = () => {
           loop
           spaceBetween={16}
         >
+          <SwiperSlide>
+            <RoomCardSkeleton />
+          </SwiperSlide>
+          <SwiperSlide>
+            <RoomCardSkeleton />
+          </SwiperSlide>
+          <SwiperSlide>
+            <RoomCardSkeleton />
+          </SwiperSlide>
           <SwiperSlide>
             <RoomCardSkeleton />
           </SwiperSlide>

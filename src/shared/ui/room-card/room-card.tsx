@@ -1,5 +1,5 @@
-import { useEffect, createRef } from "react";
-import classNames from "classnames";
+import ReactDOM from "react-dom";
+import { useMemo } from "react";
 import {
   MdLockOutline,
   MdOutlineLockOpen,
@@ -11,7 +11,8 @@ import { useInView } from "react-intersection-observer";
 
 import cn from "classnames";
 import st from "./styles.module.scss";
-import RoomCardSkeleton from "./room-card-skeleton";
+import { Link } from "react-router-dom";
+import { publicNavigation } from "shared/api/internal/consts/routes";
 
 type RoomCard = {
   id: number;
@@ -27,9 +28,10 @@ export default function RoomCard(props: RoomCard) {
   const { ref, inView } = useInView({ threshold: 0.25, triggerOnce: true });
 
   return (
-    <div
+    <Link
+      to={publicNavigation.ROOM + props.id}
       ref={ref}
-      className={cn(st.room_card, props.onClick && st.pointer)}
+      className={cn(st.room_card)}
       onClick={() => {
         if (props.onClick) {
           props.onClick(props.id);
@@ -58,6 +60,6 @@ export default function RoomCard(props: RoomCard) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

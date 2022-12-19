@@ -10,8 +10,6 @@ import { $screen } from "shared/idk/screen/screen";
 import { useNavigate } from "react-router-dom";
 import { publicNavigation } from "shared/api/internal/consts/routes";
 
-import st from "./styles.module.scss";
-
 export default function RecentRoomsChunk() {
   const navigate = useNavigate();
 
@@ -43,7 +41,6 @@ export default function RecentRoomsChunk() {
             roomName={room.name}
             type={room.type}
             usersCount={room.usersCount}
-            onClick={(id) => navigate(publicNavigation.ROOM + id)}
           />
         </SwiperSlide>
       ))}
